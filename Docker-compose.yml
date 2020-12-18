@@ -1,0 +1,16 @@
+version: "3.8"
+services :
+    server : 
+      build: .
+      container_name: bn
+      restart: always
+      ports: 
+        - "8000:8000"
+      command: npm start
+    frontend : 
+      image: fn
+      container_name: frontend
+      restart: always
+      command: npm start
+      ports:
+      - "3000:3000"
